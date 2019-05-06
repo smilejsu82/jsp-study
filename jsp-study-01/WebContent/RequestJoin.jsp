@@ -20,7 +20,7 @@
 			<tr height="50">
 				<td width="150" align="center">패스워드</td>
 				<td width="350" align="center">
-					<input type="password" name="pass1" size="40">
+					<input type="password" name="pass1" size="40" placeholder="비밀번호는 영문과 숫자만 넣어주세요.">
 				</td>
 			</tr>
 			<tr height="50">
