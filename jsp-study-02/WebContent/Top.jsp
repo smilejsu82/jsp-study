@@ -19,12 +19,13 @@
 			</td>
 		</tr>
 		<tr height="50">
-			<td width="130" align="center">텐트</td>
-			<td width="130" align="center">의자</td>
-			<td width="130" align="center">식기류</td>
-			<td width="130" align="center">침낭</td>
-			<td width="130" align="center">테이블</td>
-			<td width="130" align="center">화롯대</td>
+			<td width="110" align="center">텐트</td>
+			<td width="110" align="center">의자</td>
+			<td width="110" align="center">식기류</td>
+			<td width="110" align="center">침낭</td>
+			<td width="110" align="center">테이블</td>
+			<td width="110" align="center">화롯대</td>
+			<td width="140" align="center"><%=request.getParameter("id") %></td>
 		</tr>
 	</table>
 </body>
