@@ -29,7 +29,7 @@
 	memberBean.setHobby(strHobbies);
 
 	String id = "hr";
-	String pass = "1234";
+	String pass = "123456";
 	String url = "jdbc:oracle:thin:@localhost:49161:XE";
 	
 	try{
