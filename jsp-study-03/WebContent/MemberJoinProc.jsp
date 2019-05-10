@@ -1,7 +1,4 @@
 <%@page import="model.MemberDAO"%>
-<%@page import="java.sql.PreparedStatement"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -30,8 +27,10 @@
 	memberBean.setHobby(strHobbies);
 	
 	MemberDAO dao = new MemberDAO();
+	//dao.getCon();
 	dao.insertMember(memberBean);
 	
+	response.sendRedirect("MemberList.jsp");
 %>
 
 	오라클 접속 완료

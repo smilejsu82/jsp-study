@@ -3,12 +3,17 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.Vector;
 
 public class MemberDAO {
 	
-	String id = "hr";
+//	String id = "hr";
+//	String pass = "123456";
+//	String url = "jdbc:oracle:thin:@localhost:49161:XE";
+	
+	String id = "system";
 	String pass = "123456";
-	String url = "jdbc:oracle:thin:@localhost:49161:XE";
+	String url = "jdbc:oracle:thin:@localhost:1521:XE";
 	
 	Connection con;
 	PreparedStatement state;
@@ -19,11 +24,13 @@ public class MemberDAO {
 		try 
 		{
 			Class.forName(oracleClassName);
-			this.con = DriverManager.getConnection(url, id, pass);
+			con = DriverManager.getConnection(url, id, pass);
+			
+			System.out.println("접속 완료: " + con);
 		}
 		catch(Exception e)
 		{
-			
+			e.printStackTrace();
 		}
 	}
 	
@@ -33,6 +40,9 @@ public class MemberDAO {
 			
 			getCon();
 			String sql = "insert into member values(?,?,?,?,?,?,?,?)";
+			
+			System.out.println("con: " + con);
+			
 			PreparedStatement statement = con.prepareStatement(sql);
 			statement.setString(1, memberBean.getId());
 			statement.setString(2, memberBean.getPass1());
@@ -50,6 +60,13 @@ public class MemberDAO {
 		{
 			e.printStackTrace();
 		}
+	}
+	
+	public Vector<MemberBean> allSelectMembers()
+	{
+		Vector<MemberBean> v = new Vector();
+		
+		return v;
 	}
 	
 }
