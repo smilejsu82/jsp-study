@@ -99,4 +99,37 @@ public class MemberDAO {
 		return v;
 	}
 	
+	public MemberBean onSelectMember(String id)
+	{
+		MemberBean bean = new MemberBean();
+		
+		try {
+			this.getCon();
+			
+			String sql = "select * from member where id=?";
+			this.state = this.con.prepareStatement(sql);
+			this.state.setString(1,  id);
+			this.resultSet = this.state.executeQuery();
+			
+			if(this.resultSet.next())
+			{
+				bean.setId(this.resultSet.getString(1));
+				bean.setPass1(this.resultSet.getString(2));
+				bean.setEmail(this.resultSet.getString(3));
+				bean.setTel(this.resultSet.getString(4));
+				bean.setHobby(this.resultSet.getString(5));
+				bean.setJob(this.resultSet.getString(6));
+				bean.setAge(this.resultSet.getString(7));
+				bean.setInfo(this.resultSet.getString(8));
+			}
+			
+			this.con.close();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return bean;
+	}
+	
 }

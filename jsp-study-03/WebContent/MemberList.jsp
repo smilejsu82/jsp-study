@@ -30,7 +30,13 @@
 			%>
 			
 					<tr height="50">
-						<td align="center" width="150"><%=bean.getId() %></td>
+						<td align="center" width="150">
+							<a href="MemberInfo.jsp?id=<%=bean.getId() %>">
+								<%=bean.getId() %>
+							</a>
+						</td>
+						
+						<%-- <td align="center" width="150"><%=bean.getId() %></td> --%>
 						<td align="center" width="150"><%=bean.getEmail() %></td>
 						<td align="center" width="150"><%=bean.getTel() %></td>
 						<td align="center" width="150"><%=bean.getHobby() %></td>
